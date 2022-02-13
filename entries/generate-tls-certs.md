@@ -1,4 +1,6 @@
 # Generate self-signed TLS/SSL certificates in seconds  
+Parameter explanation coming soon
+
 
 Collected from different sources.  
 Wiki link to [x.509](https://en.wikipedia.org/wiki/X.509) for reference.  
@@ -47,4 +49,24 @@ To view only the subject information from this certificate
 
     openssl x509 -in cert.pem -noout -subject
     
-More detail in-progress
+### Using a pre-generated key
+
+    openssl genrsa -out key.pem 2048
+    openssl req -x509 -new -key key.pem -out cert.pem
+    
+Since the key is generated before generating the certificate, there is no prompt for password this time, therefore we can completely automate the certificate generation step. Putting it all together
+
+    openssl genrsa -out key.pem 2048
+    openssl req -new \
+                -x509 \
+                -key key.pem \
+                -out cert.pem \
+                -keyout key.pem \
+                -addext  keyUsage=digitalSignature,keyEncipherment \
+                -subj "/CN=c3JpbmkK/C=DE/ST=Hessen/L=FFM"
+    echo
+    openssl x509 -in cert.pem -noout -text
+    openssl x509 -in cert.pem -noout -ext keyUsage
+    openssl x509 -in cert.pem -noout -subject
+    
+

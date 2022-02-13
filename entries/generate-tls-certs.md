@@ -4,7 +4,10 @@ Collected from different sources.
 Wiki link to [x.509](https://en.wikipedia.org/wiki/X.509) for reference.  
 `man openssl`, `man x509v3_config` for command reference.  
 
-- [Generating certificates](#Generate-a-self-signed-certificate-for-quick-testing)
+- [Generating certificates](#generate-a-self-signed-certificate-for-quick-testing)  
+  - [Certificate with defaults](#to-create-a-new-x509-certificate-with-all-defaults)  
+  - [Certificate with defaults and extension](#to-create-a-new-x509-certificate-with-all-defaults-and-some-extensions)  
+  - [Certificate with extensions and details](#to-create-a-new-x509-certificate-with-extensions-and-information-about-certificate-holder)    
 
 ## Generate a self-signed certificate for quick testing  
 * You need the latest openssl for some options to work.  
@@ -18,7 +21,7 @@ To view the certificate
 
     openssl x509 -in cert.pem -noout -text
 
-### To create a new x.509 certificate with all defaults, and some extensions
+### To create a new x.509 certificate with all defaults and some extensions
     
     openssl req -x509 -new -newkey rsa:4096 -out cert.pem -keyout key.pem -addext keyUsage=digitalSignature,keyEncipherment  
 

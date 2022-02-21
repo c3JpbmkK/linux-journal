@@ -51,15 +51,15 @@ To view only the subject information from this certificate
     
 ### Using a pre-generated key
 
-    openssl genrsa -out key.pem 2048
-    openssl req -x509 -new -key key.pem -out cert.pem
+    openssl genrsa -out keyIn.pem 2048
+    openssl req -x509 -new -key keyIn.pem -out cert.pem
     
 Since the key is generated before generating the certificate, there is no prompt for password this time, therefore we can completely automate the certificate generation step. Putting it all together
 
-    openssl genrsa -out key.pem 2048
+    openssl genrsa -out keyIn.pem 2048
     openssl req -new \
                 -x509 \
-                -key key.pem \
+                -key keyIn.pem \
                 -out cert.pem \
                 -keyout key.pem \
                 -addext  keyUsage=digitalSignature,keyEncipherment \

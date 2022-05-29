@@ -1,0 +1,1 @@
+# Things I faced after changing to a Linux workstation as a Windows user

@@ -1,5 +1,5 @@
 # Generate self-signed TLS/SSL certificates in seconds  
-Parameter explanation coming soon
+Parameter explanation coming soon (sometime)
 
 
 Collected from different sources.  

@@ -24,4 +24,4 @@
 | Vim   | : + 10,20s/expression/replacement/ | String replacement. "s" indicates substitution. "/" is field separator, could also use other symbols, but "/" is easier to remember. Scoped to lines between 10 and 20. <br>**Usage**: 10:20s/word/Bird/g                                                  |
 
 > For more Vim shortcuts, use `vimtutor` or open vim and use `:help`  
-> Will add more, when I learn something new/or start using everyday.
+> Will add more, as I learn something new/or start using everyday.
